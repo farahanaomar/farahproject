@@ -1,7 +1,18 @@
-body {
-    background-color: slategray;
+.contentA .card-body{
+    background-color: #708090;
     text-align: center;
 
+}
+
+
+/* body {
+    background-color: #708090;
+    text-align: center;
+
+} */
+
+btn{
+    color: blue;
 }
 
 p {

@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{%block contentA%}
+<div class="container w-50">
+    <form method=POST action="">
+{{form.hidden_tag()}}
+<fieldset>
+<legend class="border-bottom mb-4">Login</legend>
+<!-- Username column -->
+<div class="form-group mt-4">
+    {{form.username.label(class="form-control-label")}}
+    {% if form.username.errors %}
+    {{form.username(class="form-control form-control-lg is-invalid")}}
+        {% for error in form.username.errors%}
+            <span>{{error}}</span>
+        {%endfor%}
+        {%else%}
+        {{form.username(class="form-control form-control-lg")}}
+    {%endif%}
+</div>
+
+<!-- Password column -->
+<div class="form-group mt-4">
+    {{form.password.label(class="form-control-label")}}
+    {% if form.password.errors %}
+    {{form.password(class="form-control form-control-lg is-invalid")}}
+        {% for error in form.password.errors%}
+            <span>{{error}}</span>
+        {%endfor%}
+        {% else %}
+        {{form.password(class="form-control form-control-lg")}}
+    {%endif%}
+</div>
+
+</fieldset>
+
+<!-- Register button -->
+<div class="field-group mt-4">
+    {{form.submit(class='btn btn-online-info')}}
+
+</div>
+    </from>
+</div>
+
+
+{%endblock contentA%}

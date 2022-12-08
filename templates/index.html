@@ -1,21 +1,31 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Say Hello</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
-    </head>
-    <body>
-        <img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png">
-        <br>
-        <form action="greet" method="post">
-            {% for message in get_flashed_messages() %}
-                <p>{{message}}</p>
-            {% endfor%}
+{% extends 'layout.html' %}
+
+{%block contentA%}
+
+<div class="contentA">
+  <div class="card text-center">
+    <div class="card-body">
+        <div>
+            <img src="https://raw.githubusercontent.com/MariyaSha/SimpleGreetingApp/main/logo.png">
             <br>
-            <input  type="text" name="name_input">
-            <br>
-            <input type="submit" value="GREET" id="greet">
-        </form>
-    </body>
-</html>
+            <form action="greet" method="post">
+                {% for message in get_flashed_messages() %}
+                    <p>{{message}}</p>
+                {% endfor%}
+                <br>
+                <input  type="text" name="name_input">
+                <br><br>
+                <input type="submit" value="GREET" id="greet">
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="{{url_for('static', filename='main.js')}}"> </script>
+{%endblock contentA%}
+
+<!-- Login Form -->
+{%block contentB%}
+{%endblock contentB%}
